@@ -1,5 +1,9 @@
+:root {
+    --app-height: 100%;
+}
+
 html, body {
-    height: calc(100vh - calc(100vh - 100%))
+    height: var(--app-height);
 }
 
 body {

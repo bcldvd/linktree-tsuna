@@ -49,15 +49,20 @@
     </div>
     <!--Header ends-->
 
-    <!-- <script>
-        if (_isMobileSafari()) {
-            document.body.classList.add('browser-has-chin')
-        }
-
-        function _isMobileSafari() {
+    <script>
+        const _isMobileSafari = () => {
             return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/) ? true : false;
         }
-    </script> -->
+
+        if (_isMobileSafari()) {
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('resize', appHeight)
+            appHeight();
+        }
+    </script>
     <script type="text/javascript">
         var sourceName = 'styles.css?v=' + ((new Date().getTime() * 10000) + 621355968000000000); // using ticks
         var linkElement = document.createElement('link');
