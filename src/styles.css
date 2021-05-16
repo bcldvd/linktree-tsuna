@@ -1,12 +1,10 @@
-html {
-    height: -webkit-fill-available;
+html, body {
+    height: calc(100vh - calc(100vh - 100%))
 }
 
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 h1 {
