@@ -5,7 +5,6 @@
     <title>Tsuna</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Tsuna" />
@@ -50,5 +49,22 @@
     </div>
     <!--Header ends-->
 
+    <!-- <script>
+        if (_isMobileSafari()) {
+            document.body.classList.add('browser-has-chin')
+        }
+
+        function _isMobileSafari() {
+            return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/) ? true : false;
+        }
+    </script> -->
+    <script type="text/javascript">
+        var sourceName = 'styles.css?v=' + ((new Date().getTime() * 10000) + 621355968000000000); // using ticks
+        var linkElement = document.createElement('link');
+        linkElement.setAttribute('type', 'text/css');
+        linkElement.setAttribute('rel', 'stylesheet');
+        linkElement.setAttribute('href', sourceName);
+        document.getElementsByTagName('head')[0].appendChild(linkElement);
+    </script>
 </body>
 </html>
