@@ -5,12 +5,13 @@
     <title>Tsuna</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400" />
+    <link rel="icon" href="/favicon.ico">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Tsuna" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="/" />
-    <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1AWb1B4TP2QI7_wJ8WSqZLFvw6xKbddAm" />
+    <meta property="og:image" content="https://bcldvd.github.io/linktree-tsuna/tsuna-logo.png" />
     <meta property="og:description" content="Liens Tsuna" />
 </head>
 
@@ -18,7 +19,7 @@
     <div class="header">
         <div class="inner-header flex">
             <h1>
-                <img src="https://drive.google.com/uc?export=view&id=1AWb1B4TP2QI7_wJ8WSqZLFvw6xKbddAm" alt="Tsuna">
+                <img src="/tsuna-logo.png" alt="Tsuna">
             </h1>
             <h2>La vie est trop courte pour se nourrir de banalités</h2>
 
@@ -50,6 +51,7 @@
     <!--Header ends-->
 
     <script>
+        history.scrollRestoration = "manual";
         const _isMobileSafari = () => {
             return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/) ? true : false;
         }
