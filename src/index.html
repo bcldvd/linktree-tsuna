@@ -55,12 +55,7 @@
         }
 
         if (_isMobileSafari()) {
-            const appHeight = () => {
-                const doc = document.documentElement
-                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
-            }
-            window.addEventListener('resize', appHeight)
-            appHeight();
+            window.scrollTo(0,document.body.scrollHeight);
         }
     </script>
     <script type="text/javascript">
