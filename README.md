@@ -4,7 +4,8 @@
 ## TODO
 - [x] Adapt from codepen
 - [ ] Add build system
-- [ ] Retrieve links from Google Drive
+- [x] Retrieve links from Google Drive
+- [ ] Generate OC screenshot during build
 
 ## Credits
 
