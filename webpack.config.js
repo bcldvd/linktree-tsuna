@@ -1,36 +1,42 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   plugins: [
     new HtmlWebpackPlugin({
-        inject: 'head',
-        template: 'src/index.hbs',
-        templateParameters:require('./dist/links.json')
+      inject: "head",
+      template: "src/index.hbs",
+      templateParameters: require("./dist/links.json"),
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "./src/tsuna-logo.png", to: "./tsuna-logo.png" }],
     }),
     new MiniCssExtractPlugin(),
   ],
-  mode: 'production',
+  mode: "production",
   devServer: {
-    static: './dist',
+    static: "./dist",
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-        "css-loader"],
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
       },
-      { test: /\.hbs$/, loader: "handlebars-loader" }
+      { test: /\.hbs$/, loader: "handlebars-loader" },
     ],
   },
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '',
-    clean: true
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "",
+    clean: true,
   },
 };
