@@ -1,8 +1,10 @@
-name: Deploy to GH-Pages
+name: Deploy on demand
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write # for checkout and commit
+  pull-requests: write # for create pr
 
 jobs:
   build-and-deploy:

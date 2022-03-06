@@ -16,7 +16,6 @@
   "scripts": {
     "dev": "webpack serve --open",
     "fetch:data": "node scripts/inject-content.js",
-    "prebuild" : "npm run fetch:data",
     "build": "webpack",
     "postinstall": "npm run fetch:data"
   },
