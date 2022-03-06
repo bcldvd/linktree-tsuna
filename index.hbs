@@ -22,10 +22,11 @@
                 <img src="https://bcldvd.github.io/linktree-tsuna/tsuna-logo.png" alt="Tsuna">
             </h1>
             <h2>La vie est trop courte pour se nourrir de banalités</h2>
-
+            
             <div class="links flex">
-                <a href="https://tsuna.store">Site Web</a>
-                <a href="https://www.instagram.com/tsuna.store/">Instagram</a>
+                {{#each data}}
+                    <a href="{{url}}">{{name}}</a>
+                {{/each}}
             </div>
         </div>
 
@@ -59,14 +60,6 @@
         if (_isMobileSafari()) {
             window.scrollTo(0,document.body.scrollHeight);
         }
-    </script>
-    <script type="text/javascript">
-        var sourceName = 'styles.css?v=' + ((new Date().getTime() * 10000) + 621355968000000000); // using ticks
-        var linkElement = document.createElement('link');
-        linkElement.setAttribute('type', 'text/css');
-        linkElement.setAttribute('rel', 'stylesheet');
-        linkElement.setAttribute('href', sourceName);
-        document.getElementsByTagName('head')[0].appendChild(linkElement);
     </script>
 </body>
 </html>
