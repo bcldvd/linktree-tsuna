@@ -18,7 +18,8 @@
     "dev": "webpack serve --open",
     "fetch:data": "node scripts/inject-content.js",
     "prebuild": "npm run fetch:data",
-    "build": "webpack"
+    "build": "webpack",
+    "postinstall":"npm run fetch:data"
   },
   "repository": {
     "type": "git",
