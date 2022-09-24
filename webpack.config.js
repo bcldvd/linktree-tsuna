@@ -13,7 +13,10 @@ module.exports = {
       templateParameters: require("./dist/links.json"),
     }),
     new CopyPlugin({
-      patterns: [{ from: "./src/tsuna-logo.png", to: "./tsuna-logo.png" }],
+      patterns: [
+        { from: "./src/tsuna-logo.png", to: "./tsuna-logo.png" },
+        { from: "./src/favicons", to: "./favicons" }
+      ],
     }),
     new MiniCssExtractPlugin(),
   ],
