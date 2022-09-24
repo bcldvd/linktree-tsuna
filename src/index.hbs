@@ -3,8 +3,10 @@
     <meta name="description" content="Liens Tsuna">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tsuna</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap">
     <link rel="icon" href="https://bcldvd.github.io/linktree-tsuna/favicon.ico">
 
     <!-- Open Graph data -->
@@ -25,7 +27,10 @@
             
             <div class="links flex">
                 {{#each data}}
-                    <a href="{{url}}">{{name}}</a>
+                    <a href="{{url}}">
+                        <span><img src="{{icon}}" alt="{{name}}"></span>
+                        <span>{{name}}</span>
+                        </a>
                 {{/each}}
             </div>
         </div>

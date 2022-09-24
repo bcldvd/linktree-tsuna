@@ -9,6 +9,7 @@ async function main () {
     const links = csv.split('\r\n').map(row => row.split(',')).slice(1).map(row => ({
         name: row[0],
         url: row[1],
+        icon: row[2],
     }));
     console.log(links);
 

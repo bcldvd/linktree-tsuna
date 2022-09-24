@@ -22,8 +22,8 @@ h1 img {
 }
 
 h2 {
-    font-weight: 300;
-    font-size: 16px;
+  font-family: 'Oooh Baby', cursive;
+    font-size: 18px;
     margin-bottom: 50px;
 }
 
@@ -49,7 +49,7 @@ h2 {
 
 .links a {
   border: 2px solid #d3301b;
-  border-radius: 2px;
+  border-radius: 3px;
   background: none;
   color: #d3301b;
 
@@ -60,11 +60,17 @@ h2 {
   line-height: 1.5;
   width: 100%;
   text-decoration: none;
+  display: grid;
+  grid-template-columns: 30px 1fr;
 }
 
 .links a:hover {
     background: white;
     color: #061d39;
+}
+
+.links img {
+  height: 25px;
 }
 
 .flex {
