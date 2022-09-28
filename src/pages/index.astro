@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import links from '../../public/links.json';
+
+const {data} = links;
+---
+
+<Layout title="Tsuna">
+	<main>
+		<div class="header">
+			<div class="inner-header flex">
+				<h1>
+					<img src="https://res.cloudinary.com/david-shokugeki/image/upload/w_200,c_scale/Logo%20Tsuna.png" alt="Tsuna">
+				</h1>
+				
+				<div class="links flex">
+					{data.map(link => (
+						<Card
+							href={link.url}
+							icon={link.icon}
+							title={link.name}
+						/>
+					))}
+				</div>
+			</div>
+	
+		</div>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+
+	h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+  margin-top: 50px;
+}
+
+h1 img {
+    height: 10vh;
+    filter: drop-shadow(0px 0px 14px #d3301b);
+    will-change: filter;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {filter: drop-shadow(0px 0px 0px #d3301b);}
+}
+
+.header {
+  position: relative;
+  text-align: center;
+
+  color: #d3301b;
+}
+
+.inner-header {
+  height: 85vh;
+  width: 100%;
+  max-width: 680px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.links {
+  width: 100%;
+}
+
+.links a {
+  border: 2px solid #d3301b;
+  border-radius: 3px;
+  background: none;
+  color: #d3301b;
+
+  margin-bottom: 16px;
+
+  padding: 16px 20px;
+
+  line-height: 1.5;
+  width: 100%;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+}
+
+.links a:hover {
+    color: #061d39;
+}
+
+.links img {
+  height: 25px;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+</style>

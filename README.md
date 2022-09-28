@@ -3,7 +3,7 @@
 
 ## TODO
 - [x] Adapt from codepen
-- [ ] Add build system
+- [x] Add build system
 - [x] Retrieve links from Google Drive
 - [ ] Generate OC screenshot during build
 

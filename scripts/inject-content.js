@@ -1,8 +1,9 @@
-const {get} = require('axios');
-const {existsSync, mkdirSync, writeFileSync} = require('fs');
-const path = require('path');
+import axios from 'axios';
+const {get} = axios;
+import {existsSync, mkdirSync, writeFileSync} from 'fs';
+import path from 'path';
 const gSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRsjp81T9ZgnrILbUU3reGXHTKcm5rMOgt6-rr_dsAJ20lTmgp66AP2KnbFo3AZ2ooSdo5kekTP41r7/pub?gid=0&single=true&output=csv';
-const DIST = 'dist';
+const OUT_FOLDER = 'public';
 
 async function main () {
     const csv = (await get(gSheet, {responseType: 'text'})).data;
@@ -13,7 +14,7 @@ async function main () {
     }));
     console.log(links);
 
-    const dir = path.resolve(process.cwd(), DIST);
+    const dir = path.resolve(process.cwd(), OUT_FOLDER);
     if (!existsSync(dir)){
         mkdirSync(dir);
     }
